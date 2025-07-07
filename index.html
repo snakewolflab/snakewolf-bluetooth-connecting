@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnakeWolf Bluetooth Connecting</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>SnakeWolf Bluetooth Connecting</h1>
+
+    <button id="connectButton">Bluetoothデバイスに接続</button>
+    <div id="status">未接続</div>
+
+    <div id="uartSection" class="hidden">
+        <h2>UART シリアル通信</h2>
+        <textarea id="uartReceive" rows="5" readonly></textarea>
+        <input type="text" id="uartSendInput" placeholder="送信するテキスト">
+        <button id="uartSendButton">送信</button>
+    </div>
+
+    <div id="gpioSection" class="hidden">
+        <h2>GPIO 制御</h2>
+        </div>
+
+    <div id="pwmSection" class="hidden">
+        <h2>PWM 制御</h2>
+        </div>
+
+    <div id="sensorSection" class="hidden">
+        <h2>センサーデータ表示</h2>
+        <div id="sensorData"></div>
+        </div>
+
+    <div id="joystickSection" class="hidden">
+        <h2>ジョイスティック/ゲームパッド入力</h2>
+        <canvas id="joystickCanvas" width="200" height="200" style="border:1px solid #000;"></canvas>
+        <div id="joystickOutput">X: 0, Y: 0</div>
+    </div>
+
+    <script type="module" src="js/lib/ble-utils.js"></script>
+    <script type="module" src="js/uart.js"></script>
+    <script type="module" src="js/gpio.js"></script>
+    <script type="module" src="js/pwm.js"></script>
+    <script type="module" src="js/sensor.js"></script>
+    <script type="module" src="js/joystick.js"></script>
+    <script type="module" src="js/main.js"></script> </body>
+</html>
